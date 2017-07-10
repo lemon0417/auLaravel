@@ -15,7 +15,7 @@
 //     return view('welcome');
 // });
 
-Route::get('/', 'IndexController@show');
+Route::get('/', 'Guest\IndexController@show');
 
 Route::get('user/{id}', 
     // Closure
