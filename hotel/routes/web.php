@@ -16,7 +16,9 @@
 // });
 
 Route::get('/', function(){
-    return view('index');
+    return view('index', [
+        'name' => 'chrislin'
+        ]);
 });
 
 Route::get('user/{id}', function($id){
