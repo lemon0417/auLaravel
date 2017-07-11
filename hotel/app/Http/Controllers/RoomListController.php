@@ -54,4 +54,20 @@ class RoomListController extends Controller
             'type' => 'success'
         ]);
     }
+
+    public function mod(Request $request) {
+        $data = $request->all();
+        $room = RoomListModel::find($data['id']);
+
+        $room->title = $data['title'];
+        $room->type = $data['type'];
+        $room->total = $data['total'];
+        $room->price = $data['price'];
+
+        $room -> save();
+
+        return response() -> json([
+            'type' => 'success'
+        ]);
+    }
 }

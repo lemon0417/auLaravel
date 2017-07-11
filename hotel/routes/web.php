@@ -35,9 +35,7 @@ Route::group(['prefix' => 'admin', 'middleware' => App\Http\Middleware\AdminMidd
 
     Route::post('room_list/add', 'RoomListController@add')->name('admin.room_list.add');
 
-    Route::post('room_list/mod', function() {
-
-    })->name('admin.room_list.mod');
+    Route::post('room_list/mod', 'RoomListController@mod')->name('admin.room_list.mod');
 
     Route::post('room_list/del', function() {
 
