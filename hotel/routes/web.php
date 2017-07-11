@@ -23,9 +23,7 @@ Route::post('/register', 'AuthController@register');
 Route::get('/login', 'AuthController@showLogin') -> name('login');
 Route::post('/login', 'AuthController@login');
 
-Route::get('/logout', function($id) {
-
-}) -> name('logout');
+Route::get('/logout', 'AuthController@logout') -> name('logout');
 
 // http://localhost:8000/admin/dashboard
 // http://localhost:8000/admin/news

@@ -70,4 +70,10 @@ class AuthController extends Controller
             }
         }
     }
+
+    public function logout(Request $request) {
+        session() -> flush();
+        session() -> regenerate();
+        return redirect() -> route('index');
+    }
 }
