@@ -52,6 +52,22 @@ class AuthController extends Controller
                     ['password', '=', $data['password']]
                 ])
                 ->get();
-        return $user;
+
+        if (count($user) === 1) {
+            session([
+                'user' => explode('@', $user[0]->email)[0],
+                'role' => $user[0]->role
+            ]);
+
+            if ($user[0]->role === 'admin') {
+                return redirect()->route('admin.room_list');
+            }
+            else if ($user[0]->role === 'user') {
+                return redirect()->route('index');
+            }
+            else {
+                return view('login', ['error' => '登入錯誤']);
+            }
+        }
     }
 }

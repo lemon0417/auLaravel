@@ -31,7 +31,7 @@ Route::get('/logout', function($id) {
 // http://localhost:8000/admin/news
 Route::group(['prefix' => 'admin'], function() {
     // http://localhost:8000/admin/room_list
-    Route::get('/room_list', function ($id) {
-        
-    });
+    Route::get('/room_list', function () {
+        return view('admin.room_list');
+    })->name('admin.room_list');
 });
