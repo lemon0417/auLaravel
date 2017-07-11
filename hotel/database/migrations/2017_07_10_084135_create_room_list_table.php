@@ -17,7 +17,7 @@ class CreateRoomListTable extends Migration
             $table->increments('id');
             $table->string('title', 100);
             $table->string('type', 15);
-            $table->integer('current');
+            $table->integer('current')->default(0);
             $table->integer('total');
             $table->float('price');
             $table->timestamps();
