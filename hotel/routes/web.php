@@ -29,7 +29,19 @@ Route::get('/logout', 'AuthController@logout') -> name('logout');
 // http://localhost:8000/admin/news
 Route::group(['prefix' => 'admin', 'middleware' => App\Http\Middleware\AdminMiddleware::class], function() {
     // http://localhost:8000/admin/room_list
-    Route::get('/room_list', function () {
-        return view('admin.room_list');
-    })->name('admin.room_list');
+    Route::get('/room_list', 'RoomListController@show')->name('admin.room_list');
+
+    Route::post('room_list/sel', function() {
+
+    })->name('admin.room_list.sel');
+
+    Route::post('room_list/add', 'RoomListController@add')->name('admin.room_list.add');
+
+    Route::post('room_list/mod', function() {
+
+    })->name('admin.room_list.mod');
+
+    Route::post('room_list/del', function() {
+
+    })->name('admin.room_list.del');
 });

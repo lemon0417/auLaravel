@@ -21,22 +21,22 @@
                 </tr>
             </thead>
             <tbody>
-                {{-- @foreach($rooms as $room)
+                @foreach($rooms as $room)
                     @include('partials.room_list_row', (array)$room)
-                @endforeach --}}
+                @endforeach
             </tbody>
         </table>
     </div>
 </div>
 
-{{-- @foreach($modals as $modal)
+@foreach($modals as $modal)
     @include('partials.room_list_modal', $modal)
-@endforeach --}}
+@endforeach
 
 @endsection
 
 @section('js')
-{{-- <script>
+<script>
     $(function () {
         $('#add-room-modal button.submit').on('click', function () {
             var url = '{{ route('admin.room_list.add') }}',
@@ -109,5 +109,5 @@
             $.post(url, data, afterPost)
         });
     });
-</script> --}}
+</script>
 @endsection

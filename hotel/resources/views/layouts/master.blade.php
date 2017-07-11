@@ -17,6 +17,7 @@
             padding-top: 80px;
         }
     </style>
+    @yield('css')
 </head>
 <body>
     @include('partials.menu')
@@ -27,6 +28,6 @@
     </div>
 
     {{-- @include('partials.footer') --}}
-    @yield('css')
+    @yield('js')
 </body>
 </html>
