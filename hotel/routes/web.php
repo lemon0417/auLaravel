@@ -27,7 +27,7 @@ Route::get('/logout', 'AuthController@logout') -> name('logout');
 
 // http://localhost:8000/admin/dashboard
 // http://localhost:8000/admin/news
-Route::group(['prefix' => 'admin'], function() {
+Route::group(['prefix' => 'admin', 'middleware' => App\Http\Middleware\AdminMiddleware::class], function() {
     // http://localhost:8000/admin/room_list
     Route::get('/room_list', function () {
         return view('admin.room_list');
