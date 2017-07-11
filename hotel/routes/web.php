@@ -15,10 +15,22 @@
 //     return view('welcome');
 // });
 
-Route::get('/', 'Guest\IndexController@show');
+Route::get('/', 'Guest\IndexController@show') -> name('index');
 
-Route::get('user/{id}', 
-    // Closure
-    function($id) {
-        return 'Hello, '.$id;
-}) -> where('id', '[A-Za-z]+');
+Route::get('/register', 'AuthController@showRegister') -> name('register');
+Route::post('/register', 'AuthController@register');
+
+Route::get('/login', 'AuthController@showLogin') -> name('login');
+
+Route::get('/logout', function($id) {
+
+}) -> name('logout');
+
+// http://localhost:8000/admin/dashboard
+// http://localhost:8000/admin/news
+Route::group(['prefix' => 'admin'], function() {
+    // http://localhost:8000/admin/room_list
+    Route::get('/room_list', function ($id) {
+        
+    });
+});

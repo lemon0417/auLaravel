@@ -15,7 +15,7 @@
 @section('content')
     <div class="row">
       @foreach($rooms as $room)
-          @include('partials.room_card', $room)
+          {{-- @include('partials.room_card', $room) --}}
       @endforeach
 
       {{-- (div.col-lg-3>a>img+h4+p)*3 --}}
