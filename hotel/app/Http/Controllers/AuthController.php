@@ -36,4 +36,22 @@ class AuthController extends Controller
 
         return redirect() -> route('index');
     }
+
+    public function login(Request $request) {
+        $data = $request->all();
+
+        $this->validate($request, [
+            'email' => 'required|email',
+            'password' => 'required'
+        ]);
+
+        $user=DB::table('users')
+                ->select('email', 'role')
+                ->where([
+                    ['email', '=', $data['email']],
+                    ['password', '=', $data['password']]
+                ])
+                ->get();
+        return $user;
+    }
 }

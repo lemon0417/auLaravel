@@ -21,6 +21,7 @@ Route::get('/register', 'AuthController@showRegister') -> name('register');
 Route::post('/register', 'AuthController@register');
 
 Route::get('/login', 'AuthController@showLogin') -> name('login');
+Route::post('/login', 'AuthController@login');
 
 Route::get('/logout', function($id) {
 
