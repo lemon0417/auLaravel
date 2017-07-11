@@ -70,4 +70,13 @@ class RoomListController extends Controller
             'type' => 'success'
         ]);
     }
+
+    public function del(Request $request) {
+        $data = $request->all();
+        RoomListModel::destroy($data['id']);
+
+        return response() -> json([
+            'type' => 'success'
+        ]);
+    }
 }
