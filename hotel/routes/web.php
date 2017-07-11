@@ -31,9 +31,7 @@ Route::group(['prefix' => 'admin', 'middleware' => App\Http\Middleware\AdminMidd
     // http://localhost:8000/admin/room_list
     Route::get('/room_list', 'RoomListController@show')->name('admin.room_list');
 
-    Route::post('room_list/sel', function() {
-
-    })->name('admin.room_list.sel');
+    Route::post('room_list/sel', 'RoomListController@sel')->name('admin.room_list.sel');
 
     Route::post('room_list/add', 'RoomListController@add')->name('admin.room_list.add');
 

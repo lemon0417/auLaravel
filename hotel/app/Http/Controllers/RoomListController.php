@@ -29,6 +29,16 @@ class RoomListController extends Controller
         ]);
     }
 
+    public function sel(Request $request) {
+        $data = $request->all();
+        $room = RoomListModel::find($data['id']);
+
+        return response()->json([
+            'type' => 'success',
+            'room' => $room
+        ]);
+    }
+
     public function add(Request $request) {
         $data = $request->all();
 
